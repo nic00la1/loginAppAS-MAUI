@@ -42,14 +42,32 @@
                 return;
             }
 
-            // Continue with login logic
-            // ...
+            // Continue with registration logic
+            Register(email, password);
 
-            // Wyświetl komunikat powitalny
-            welcomeLabel.Text = $"Witaj {email}";
+            // Continue with login logic
+            Login(email, password);
 
             // Wyczyść label z błędem "Wpisz hasło"
             errorLabel.Text = "";
+        }
+
+        private void Register(string email, string password)
+        {
+            // TODO: Implement registration logic
+            // ...
+
+            DisplayAlert("Registration Success", "", "Ok");
+        }
+
+        private void Login(string email, string password)
+        {
+            // TODO: Implement login logic
+            // ...
+
+            DisplayAlert("Login Success", "", "Ok");
+            //Navigate to Wellcom page after successfully login  
+            Navigation.PushAsync(new WelcomePage());
         }
     }
 
