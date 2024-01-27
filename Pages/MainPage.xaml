@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="loginAppAS.MainPage">
+
+    <VerticalStackLayout>
+        <Label Text="Witaj w aplikacji!"
+               BackgroundColor="Teal"
+               FontSize="Large"/>
+
+        <Button Text="Zarejestruj się" 
+                BackgroundColor="Teal"
+                TextColor="White"
+                Margin="10"
+                Clicked="RegisterButton_Clicked"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"/>
+
+        <Button Text="Zaloguj się" 
+                BackgroundColor="Teal"
+                TextColor="White"
+                Margin="10"
+                Clicked="LoginButton_Clicked"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"/>
+
+        <Label x:Name="errorLabel"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"/>
+
+    </VerticalStackLayout>
+</ContentPage>
