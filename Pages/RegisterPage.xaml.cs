@@ -14,9 +14,16 @@ namespace loginAppAS
 
         private async void RegisterButton_Clicked(object sender, EventArgs e)
         {
+            string name = nameEntry.Text;
             string email = emailEntry.Text;
             string password = passwordEntry.Text;
             string confirmPassword = confirmPasswordEntry.Text;
+
+            if (string.IsNullOrEmpty(name))
+            {
+                errorLabel.Text = "Wpisz imiê";
+                return;
+            }
 
             if (string.IsNullOrEmpty(email) || !email.Contains("@"))
             {

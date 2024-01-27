@@ -36,7 +36,7 @@
                     <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
                             <Image VerticalOptions="Center" Source="user.png" HeightRequest="25" WidthRequest="25" />
-                            <handless:BorderlessEntry VerticalOptions="Center" Placeholder="Name" Grid.Column="1" />
+                            <handless:BorderlessEntry x:Name="nameEntry" VerticalOptions="Center" Placeholder="Imię" Grid.Column="1" />
                         </Grid>
                     </Frame>
 

@@ -41,7 +41,7 @@ namespace loginAppAS
             }
             else
             {
-                errorLabel.Text = "Nie masz konta! Utwórz je! ";
+                errorLabel.Text = "Nie ma takiego konta!";
             }
         }
 
