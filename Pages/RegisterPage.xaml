@@ -3,37 +3,81 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="loginAppAS.RegisterPage">
 
-    <VerticalStackLayout>
-        <Label Text="Rejestracja"
-               BackgroundColor="Teal"
-               FontSize="Large"/>
+     <Grid RowDefinitions="1*,8*,1*">
+        <Frame BackgroundColor="#cfd0d8" Grid.Row="0" HorizontalOptions="EndAndExpand"
+               Padding="0" 
+               Margin="0,-80,-80,0"
+               HeightRequest="250"
+               WidthRequest="250" CornerRadius="125">
+            
+        </Frame>
 
-        <Label Text="Podaj e-mail:"/>
-        <Entry x:Name="emailEntry" 
-               Placeholder="Email"
-               HorizontalOptions="FillAndExpand"/>
+        <Frame BackgroundColor="{x:StaticResource Primary}" Grid.Row="0" HorizontalOptions="EndAndExpand"
+               Padding="0" 
+               Margin="0,-120,-120,0"
+               HeightRequest="250"
+               WidthRequest="250" CornerRadius="125">
 
-        <Label Text="Podaj hasło:"/>
-        <Entry x:Name="passwordEntry"
-               IsPassword="True"
-               HorizontalOptions="FillAndExpand"/>
+        </Frame>
 
-        <Label Text="Powtórz hasło:"/>
-        <Entry x:Name="confirmPasswordEntry"
-               IsPassword="True"
-               HorizontalOptions="FillAndExpand"/>
+        <Frame CornerRadius="0" BackgroundColor="{x:StaticResource DashboardBackground}"
+               Grid.Row="1" VerticalOptions="CenterAndExpand"
+               Margin="0,0,40,0"
+               >
+            <VerticalStackLayout Spacing="25">
+                <Label Text="SIGN IN" FontSize="28" FontAttributes="Bold" />
 
-        <Button Text="Zarejestruj się" 
-                BackgroundColor="Teal"
-                TextColor="White"
-                Margin="10"
-                Clicked="RegisterButton_Clicked"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="Center"/>
+                <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
+                    <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
+                        <Image VerticalOptions="Center" Source="email.png" HeightRequest="25" WidthRequest="25" />
+                        <!--<handless:BorderlessEntry VerticalOptions="Center" Placeholder="Email" Grid.Column="1" />-->
+                    </Grid>
+                </Frame>
 
-        <Label x:Name="errorLabel"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand"/>
-    </VerticalStackLayout>
+                <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
+                    <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
+                        <Image VerticalOptions="Center" Source="password.png" HeightRequest="25" WidthRequest="25" />
+                        <!--<handless:BorderlessEntry VerticalOptions="Center" Placeholder="Password" IsPassword="True" Grid.Column="1" />-->
+                    </Grid>
+                </Frame>
+
+                <Button CornerRadius="0" HeightRequest="60" Text="SIGN IN" FontSize="20" FontAttributes="Bold" />
+            <!-- INPUT bez obramowania -->
+                <Label FontAttributes="Bold" Text="Forgot Password?" TextColor="Gray" HorizontalTextAlignment="Center" />
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <Label  FontAttributes="Bold" TextColor="Gray" Text="Don't have account?" VerticalTextAlignment="Center" />
+                    <Label  Text="SIGN UP" FontSize="18" 
+                           FontAttributes="Bold"
+                           TextColor="{x:StaticResource Primary}" />
+                    <HorizontalStackLayout.GestureRecognizers>
+                        <!--<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_For_SignUP" />-->
+                    </HorizontalStackLayout.GestureRecognizers>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            
+        </Frame>
+
+        <Frame BackgroundColor="#cfd0d8" Grid.Row="2" 
+               VerticalOptions="EndAndExpand"
+               HorizontalOptions="StartAndExpand"
+               Padding="0" 
+               Margin="0,0,0,-180"
+               HeightRequest="250"
+               WidthRequest="250" CornerRadius="125">
+
+        </Frame>
+
+        <Frame BackgroundColor="{x:StaticResource Primary}" 
+               VerticalOptions="EndAndExpand"
+               Grid.Row="2" 
+               HorizontalOptions="StartAndExpand"
+               Padding="0" 
+               Margin="0,0,0,-200"
+               HeightRequest="250"
+               WidthRequest="250" CornerRadius="125">
+
+        </Frame>
+
+    </Grid>
 
 </ContentPage>
