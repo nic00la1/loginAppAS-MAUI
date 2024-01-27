@@ -1,3 +1,4 @@
+using loginAppAS.Models;
 namespace loginAppAS
 {
     public partial class LoginPage : ContentPage
@@ -40,7 +41,7 @@ namespace loginAppAS
             }
             else
             {
-                errorLabel.Text = "B³¹d logowania. Spróbuj ponownie.";
+                errorLabel.Text = "Nie masz konta! Utwórz je! ";
             }
         }
 
@@ -53,8 +54,42 @@ namespace loginAppAS
             // Oto przyk³ad symulacji, u¿ywaj¹c Task.Delay
             await Task.Delay(2000);
 
-            // Symulacja sukcesu logowania
-            return true;
+            // Symulacja odczytu danych z pliku loginData.txt
+            var userData = ReadUserDataFromFile(email, password);
+
+            // Sprawdzenie, czy u¿ytkownik istnieje i czy has³o jest poprawne
+            if (userData != null && userData.Password == password)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private UserData ReadUserDataFromFile(string email, string password)
+        {
+            try
+            {
+                // Scie¿ka do pliku
+                string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "loginData.txt");
+
+                // Odczyt danych z pliku
+                var lines = File.ReadAllLines(filePath);
+
+                // Szukanie u¿ytkownika o zadanym adresie e-mail
+                var userData = lines
+                    .Select(line => line.Split(','))
+                    .Where(data => data.Length == 2 && data[0] == email)
+                    .Select(data => new UserData { Email = data[0], Password = data[1] })
+                    .FirstOrDefault();
+
+                return userData;
+            }
+            catch (Exception)
+            {
+                // Obs³u¿ ewentualne b³êdy
+                return null;
+            }
         }
     }
 }
