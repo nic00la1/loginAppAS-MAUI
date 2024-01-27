@@ -29,37 +29,41 @@
                Grid.Row="1" VerticalOptions="CenterAndExpand"
                Margin="0,0,40,0"
                >
-            <VerticalStackLayout Spacing="25">
-                <Label Text="Zaloguj się" FontSize="28" FontAttributes="Bold" />
+            <ScrollView>
+                <VerticalStackLayout Spacing="25">
+                    <Label Text="Zaloguj się" FontSize="28" FontAttributes="Bold" />
 
-                <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
-                    <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
-                        <Image VerticalOptions="Center" Source="email.png" HeightRequest="25" WidthRequest="25" />
-                        <handless:BorderlessEntry VerticalOptions="Center" Placeholder="Email" Grid.Column="1" />
-                    </Grid>
-                </Frame>
+                    <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
+                        <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
+                            <Image VerticalOptions="Center" Source="email.png" HeightRequest="25" WidthRequest="25" />
+                            <handless:BorderlessEntry x:Name="emailEntry" VerticalOptions="Center" Placeholder="Email" Grid.Column="1" />
+                        </Grid>
+                    </Frame>
 
-                <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
-                    <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
-                        <Image VerticalOptions="Center" Source="password.png" HeightRequest="25" WidthRequest="25" />
-                        <handless:BorderlessEntry VerticalOptions="Center" Placeholder="Password" IsPassword="True" Grid.Column="1" />
-                    </Grid>
-                </Frame>
+                    <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
+                        <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
+                            <Image VerticalOptions="Center" Source="password.png" HeightRequest="25" WidthRequest="25" />
+                            <handless:BorderlessEntry x:Name="passwordEntry" VerticalOptions="Center" Placeholder="Password" IsPassword="True" Grid.Column="1" />
+                        </Grid>
+                    </Frame>
 
-                <Button CornerRadius="0" HeightRequest="60" Text="OK" FontSize="20" FontAttributes="Bold" />
-                <!-- INPUT bez obramowania -->
-                <Label FontAttributes="Bold" Text="Zapomniałeś hasła?" TextColor="Gray" HorizontalTextAlignment="Center" />
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <Label  FontAttributes="Bold" TextColor="Gray" Text="Nie masz konta?" VerticalTextAlignment="Center" />
-                    <Label  Text="UTWÓRZ JE" FontSize="18" 
-                           FontAttributes="Bold"
-                           TextColor="{x:StaticResource Primary}" />
-                    <HorizontalStackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_For_Register" />
-                    </HorizontalStackLayout.GestureRecognizers>
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
+                    <Button CornerRadius="0" HeightRequest="60" Text="OK" FontSize="20" FontAttributes="Bold" Clicked="LoginButton_Clicked" />
 
+                    <!-- INPUT bez obramowania -->
+                    <Label FontAttributes="Bold" Text="Zapomniałeś hasła?" TextColor="Gray" HorizontalTextAlignment="Center" />
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                        <Label  FontAttributes="Bold" TextColor="Gray" Text="Nie masz konta?" VerticalTextAlignment="Center" />
+                        <Label  Text="UTWÓRZ JE" FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="{x:StaticResource Primary}">
+                            <HorizontalStackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_For_Register" />
+                            </HorizontalStackLayout.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+                    <Label x:Name="errorLabel" TextColor="Red" HorizontalOptions="CenterAndExpand"/>
+                </VerticalStackLayout>
+            </ScrollView>
         </Frame>
 
         <!--Kolka w tle-->

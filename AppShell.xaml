@@ -16,4 +16,9 @@
         Title="Home"
         ContentTemplate="{DataTemplate local:RegisterPage}"
         Route="Register" />
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:WelcomePage}"
+        Route="Welcome" />
 </Shell>
