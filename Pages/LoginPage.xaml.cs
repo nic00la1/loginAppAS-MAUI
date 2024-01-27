@@ -7,6 +7,10 @@ namespace loginAppAS
             InitializeComponent();
         }
 
+        private async void TapGestureRecognizer_Tapped_For_Register(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Register");
+        }
 
     }
 }
