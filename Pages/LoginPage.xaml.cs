@@ -30,6 +30,9 @@ namespace loginAppAS
                 return;
             }
 
+            // Zadeklaruj i zainicjuj userData w ramach metody
+            var userData = ReadUserDataFromFile(email, password);
+
             // Implementacja logowania
             bool loginSuccess = await Login(email, password);
 
@@ -37,7 +40,7 @@ namespace loginAppAS
             {
                 // Po udanym zalogowaniu, mo¿esz dodatkowo przekierowaæ u¿ytkownika
                 // do strony powitalnej, itp.
-                _ = Navigation.PushAsync(new WelcomePage());
+                _ = Navigation.PushAsync(new WelcomePage(userData));
             }
             else
             {
@@ -80,7 +83,12 @@ namespace loginAppAS
                 var userData = lines
                     .Select(line => line.Split(','))
                     .Where(data => data.Length == 2 && data[0] == email)
-                    .Select(data => new UserData { Email = data[0], Password = data[1] })
+                    .Select(data => new UserData
+                    {
+                        Email = data[0],
+                        Password = data[1],
+                        Name = "Jan Kowalski"
+                    })
                     .FirstOrDefault();
 
                 return userData;

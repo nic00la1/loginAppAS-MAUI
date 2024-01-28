@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="loginAppAS.WelcomePage"
              Title="WelcomePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Witaj! jestes zalogowany"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <StackLayout>
+        <!-- Etykieta do wyświetlania imienia -->
+        <Label x:Name="nameLabel" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+        <!-- Etykieta do wyświetlania adresu e-mail -->
+        <Label x:Name="emailLabel" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+        <!-- Inne elementy UI, jeśli są potrzebne -->
+    </StackLayout>
 </ContentPage>
