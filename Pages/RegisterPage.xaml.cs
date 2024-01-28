@@ -5,6 +5,9 @@ namespace loginAppAS
         public RegisterPage()
         {
             InitializeComponent();
+
+            // Pobierz aktualny motyw i ustaw odpowiednie obrazy
+            UpdateThemeImages();
         }
 
         private async void TapGestureRecognizer_Tapped_ForLogin(object sender, TappedEventArgs e)
@@ -95,6 +98,24 @@ namespace loginAppAS
                 // Obs³u¿ ewentualne b³êdy
                 return false;
             }
+        }
+
+        private void UpdateThemeImages()
+        {
+            var appTheme = Application.Current.RequestedTheme;
+
+            // Ustaw Ÿród³o obrazu w zale¿noœci od motywu
+            string nameImageName = appTheme == AppTheme.Light ? "user_light.png" : "user_dark.png";
+            nameImage.Source = ImageSource.FromFile(nameImageName);
+
+            string emailImageName = appTheme == AppTheme.Light ? "email_light.png" : "email_dark.png";
+            emailImage.Source = ImageSource.FromFile(emailImageName);
+
+            string passwordImageName = appTheme == AppTheme.Light ? "password_light.png" : "password_dark.png";
+            passwordImage.Source = ImageSource.FromFile(passwordImageName);
+
+            string confirmPasswordImageName = appTheme == AppTheme.Light ? "password_light.png" : "password_dark.png";
+            confirmPasswordImage.Source = ImageSource.FromFile(confirmPasswordImageName);
         }
     }
 }

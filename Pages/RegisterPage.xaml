@@ -35,28 +35,28 @@
 
                     <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
-                            <Image VerticalOptions="Center" Source="user.png" HeightRequest="25" WidthRequest="25" />
+                            <Image VerticalOptions="Center" x:Name="nameImage" Source="{x:AppThemeBinding Light=user_light.png, Dark=user_dark.png}" HeightRequest="25" WidthRequest="25" />
                             <handless:BorderlessEntry x:Name="nameEntry" VerticalOptions="Center" Placeholder="Imię" Grid.Column="1" />
                         </Grid>
                     </Frame>
 
                     <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
-                            <Image VerticalOptions="Center" Source="email.png" HeightRequest="25" WidthRequest="25" />
+                            <Image VerticalOptions="Center" x:Name="emailImage" Source="{x:AppThemeBinding Light=email_light.png, Dark=email_dark.png}" HeightRequest="25" WidthRequest="25" />
                             <handless:BorderlessEntry x:Name="emailEntry" VerticalOptions="Center" Placeholder="Email" Grid.Column="1" />
                         </Grid>
                     </Frame>
 
                     <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
-                            <Image VerticalOptions="Center" Source="password.png" HeightRequest="25" WidthRequest="25" />
+                            <Image VerticalOptions="Center" x:Name="passwordImage" Source="{x:AppThemeBinding Light=password_light.png, Dark=password_dark.png}" HeightRequest="25" WidthRequest="25" />
                             <handless:BorderlessEntry x:Name="passwordEntry" VerticalOptions="Center" Placeholder="Hasło" IsPassword="True" Grid.Column="1" />
                         </Grid>
                     </Frame>
 
                     <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
-                            <Image VerticalOptions="Center" Source="password.png" HeightRequest="25" WidthRequest="25" />
+                            <Image VerticalOptions="Center" x:Name="confirmPasswordImage" Source="{x:AppThemeBinding Light=password_light.png, Dark=password_dark.png}" HeightRequest="25" WidthRequest="25" />
                             <handless:BorderlessEntry x:Name="confirmPasswordEntry" VerticalOptions="Center" Placeholder="Powtórz hasło" IsPassword="True" Grid.Column="1" />
                         </Grid>
                     </Frame>
