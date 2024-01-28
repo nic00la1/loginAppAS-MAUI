@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="loginAppAS.LoginPage "
+             x:Class="loginAppAS.LoginPage"
              Shell.NavBarIsVisible="False"
              xmlns:handless="clr-namespace:loginAppAS.Handlers"
              Title="Zaloguj się">
@@ -27,22 +27,21 @@
 
         <Frame CornerRadius="0" BackgroundColor="{x:AppThemeBinding Light={StaticResource DashboardBackgroundLight}, Dark={StaticResource DashboardBackgroundDark}}"
                Grid.Row="1" VerticalOptions="CenterAndExpand"
-               Margin="0,0,40,0"
-               >
+               Margin="0,0,40,0">
             <ScrollView>
                 <VerticalStackLayout Spacing="25">
                     <Label Text="Zaloguj się" FontSize="28" FontAttributes="Bold" />
 
                     <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
-                            <Image VerticalOptions="Center" x:Name="emailImage" Source="email_light.png" HeightRequest="25" WidthRequest="25" />
+                            <Image VerticalOptions="Center" x:Name="emailImage" Source="{x:AppThemeBinding Light=email_light.png, Dark=email_dark.png}" HeightRequest="25" WidthRequest="25" />
                             <handless:BorderlessEntry x:Name="emailEntry" VerticalOptions="Center" Placeholder="Email" Grid.Column="1" />
                         </Grid>
                     </Frame>
 
                     <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
-                            <Image VerticalOptions="Center" Source="password.png" HeightRequest="25" WidthRequest="25" />
+                            <Image VerticalOptions="Center" x:Name="passwordImage" Source="{x:AppThemeBinding Light=password_light.png, Dark=password_dark.png}" HeightRequest="25" WidthRequest="25" />
                             <handless:BorderlessEntry x:Name="passwordEntry" VerticalOptions="Center" Placeholder="Password" IsPassword="True" Grid.Column="1" />
                         </Grid>
                     </Frame>

@@ -1,4 +1,5 @@
 using loginAppAS.Models;
+
 namespace loginAppAS
 {
     public partial class LoginPage : ContentPage
@@ -6,9 +7,10 @@ namespace loginAppAS
         public LoginPage()
         {
             InitializeComponent();
+
+            // Pobierz aktualny motyw i ustaw odpowiednie obrazy
+            UpdateThemeImages();
         }
-
-
 
         private async void TapGestureRecognizer_Tapped_For_Register(object sender, EventArgs e)
         {
@@ -99,6 +101,18 @@ namespace loginAppAS
                 // Obs³u¿ ewentualne b³êdy
                 return null;
             }
+        }
+
+        private void UpdateThemeImages()
+        {
+            var appTheme = Application.Current.RequestedTheme;
+
+            // Ustaw Ÿród³o obrazu w zale¿noœci od motywu
+            string emailImageName = appTheme == AppTheme.Light ? "email_light.png" : "email_dark.png";
+            emailImage.Source = ImageSource.FromFile(emailImageName);
+
+            string passwordImageName = appTheme == AppTheme.Light ? "password_light.png" : "password_dark.png";
+            passwordImage.Source = ImageSource.FromFile(passwordImageName);
         }
     }
 }
