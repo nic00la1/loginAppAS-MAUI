@@ -1,5 +1,4 @@
-﻿using loginAppAS.Handlers;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
 namespace loginAppAS
 {
@@ -8,9 +7,6 @@ namespace loginAppAS
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-
-            // Rejestracja konwertera
-            builder.Services.AddTransient<IValueConverter, ThemeImageConverter>();
 
             builder
                 .UseMauiApp<App>()

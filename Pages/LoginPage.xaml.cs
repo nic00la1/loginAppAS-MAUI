@@ -1,4 +1,3 @@
-using loginAppAS.Handlers;
 using loginAppAS.Models;
 namespace loginAppAS
 {
@@ -7,9 +6,6 @@ namespace loginAppAS
         public LoginPage()
         {
             InitializeComponent();
-
-            // Utwórz instancjê konwertera i przypisz do zasobów strony
-            Resources.Add("ThemeImageConverter", new ThemeImageConverter());
         }
 
 

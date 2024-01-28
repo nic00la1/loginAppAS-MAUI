@@ -1,6 +1,4 @@
-using loginAppAS.Handlers;
 using loginAppAS.Models;
-using System.Globalization;
 namespace loginAppAS;
 
 public partial class WelcomePage : ContentPage
@@ -23,8 +21,12 @@ public partial class WelcomePage : ContentPage
         {
             emailLabel.Text = $"Email: {userData.Email}";
 
-            // Ustaw Ÿród³o obrazu za pomoc¹ konwertera
-            userImage.Source = (ImageSource)new ThemeImageConverter().Convert(null, null, null, CultureInfo.CurrentCulture);
+            var appTheme = Application.Current.RequestedTheme;
+
+            // Ustaw Ÿród³o obrazu w zale¿noœci od motywu
+            string imageName = appTheme == AppTheme.Light ? "user_light.png" : "user_dark.png";
+            userImage.Source = ImageSource.FromFile(imageName);
+
         }
     }
 
