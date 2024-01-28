@@ -56,6 +56,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\email_dark.png" />
+	  <None Remove="Resources\Images\error.png" />
+	  <None Remove="Resources\Images\mobile_dark.png" />
+	  <None Remove="Resources\Images\password_dark.png" />
 	  <None Remove="Resources\Images\user_dark.png" />
 	</ItemGroup>
 

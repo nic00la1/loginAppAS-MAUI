@@ -25,7 +25,7 @@ namespace loginAppAS
                 return;
             }
 
-            if (string.IsNullOrEmpty(email) || !email.Contains("@"))
+            if (string.IsNullOrEmpty(email) || !email.Contains('@'))
             {
                 errorLabel.Text = "Podaj poprawny adres e-mail";
                 return;

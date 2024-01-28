@@ -35,7 +35,7 @@
 
                     <Frame Padding="10" BorderColor="Transparent" CornerRadius="0">
                         <Grid ColumnDefinitions="25,*" ColumnSpacing="10">
-                            <Image VerticalOptions="Center" Source="email.png" HeightRequest="25" WidthRequest="25" />
+                            <Image VerticalOptions="Center" x:Name="emailImage" Source="email_light.png" HeightRequest="25" WidthRequest="25" />
                             <handless:BorderlessEntry x:Name="emailEntry" VerticalOptions="Center" Placeholder="Email" Grid.Column="1" />
                         </Grid>
                     </Frame>

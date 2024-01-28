@@ -1,3 +1,4 @@
+using loginAppAS.Handlers;
 using loginAppAS.Models;
 namespace loginAppAS
 {
@@ -6,7 +7,12 @@ namespace loginAppAS
         public LoginPage()
         {
             InitializeComponent();
+
+            // Utwórz instancjê konwertera i przypisz do zasobów strony
+            Resources.Add("ThemeImageConverter", new ThemeImageConverter());
         }
+
+
 
         private async void TapGestureRecognizer_Tapped_For_Register(object sender, EventArgs e)
         {
@@ -18,7 +24,7 @@ namespace loginAppAS
             string email = emailEntry.Text;
             string password = passwordEntry.Text;
 
-            if (string.IsNullOrEmpty(email) || !email.Contains("@"))
+            if (string.IsNullOrEmpty(email) || !email.Contains('@'))
             {
                 errorLabel.Text = "Podaj poprawny adres e-mail";
                 return;
