@@ -12,7 +12,8 @@
         </Grid.RowDefinitions>
 
         <!-- Use a Frame to add shadow and enhance appearance -->
-        <Frame Grid.Row="0" BackgroundColor="White">
+        <Frame Grid.Row="0" 
+               BackgroundColor="{x:AppThemeBinding Light={StaticResource DashboardBackgroundLight}, Dark={StaticResource DashboardBackgroundDark}}">
             <StackLayout>
                 <Label Text="Witaj!" FontSize="Header"/>
                 <Label Text="Zalogowano pomyślnie" FontSize="Medium"/>
