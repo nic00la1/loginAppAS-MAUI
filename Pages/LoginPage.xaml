@@ -8,7 +8,7 @@
 
     <Grid RowDefinitions="1*,8*,1*">
         <!--Kolka w tle-->
-        <Frame BackgroundColor="#cfd0d8" Grid.Row="0" HorizontalOptions="EndAndExpand"
+        <Frame BackgroundColor="{x:AppThemeBinding Light={StaticResource Small-Circle-Light}, Dark={StaticResource Small-Circle-Dark}}" Grid.Row="0" HorizontalOptions="EndAndExpand"
                Padding="0" 
                Margin="0,-80,-80,0"
                HeightRequest="250"
@@ -16,7 +16,7 @@
 
         </Frame>
 
-        <Frame BackgroundColor="{x:StaticResource Primary}" Grid.Row="0" HorizontalOptions="EndAndExpand"
+        <Frame BackgroundColor="{x:AppThemeBinding Light={StaticResource Big-Circle-Light}, Dark={StaticResource Big-Circle-Dark}}" Grid.Row="0" HorizontalOptions="EndAndExpand"
                Padding="0" 
                Margin="0,-120,-120,0"
                HeightRequest="250"
@@ -25,7 +25,7 @@
         </Frame>
         <!--=====================================-->
 
-        <Frame CornerRadius="0" BackgroundColor="{x:StaticResource DashboardBackground}"
+        <Frame CornerRadius="0" BackgroundColor="{x:AppThemeBinding Light={StaticResource DashboardBackgroundLight}, Dark={StaticResource DashboardBackgroundDark}}"
                Grid.Row="1" VerticalOptions="CenterAndExpand"
                Margin="0,0,40,0"
                >
@@ -55,7 +55,7 @@
                         <Label  FontAttributes="Bold" TextColor="Gray" Text="Nie masz konta?" VerticalTextAlignment="Center" />
                         <Label  Text="UTWÓRZ JE" FontSize="18" 
                                FontAttributes="Bold"
-                               TextColor="{x:StaticResource Primary}">
+                               TextColor="{x:AppThemeBinding Light={StaticResource Big-Circle-Light},Dark={StaticResource Big-Circle-Dark}}">
                             <HorizontalStackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_For_Register" />
                             </HorizontalStackLayout.GestureRecognizers>
@@ -67,7 +67,7 @@
         </Frame>
 
         <!--Kolka w tle-->
-        <Frame BackgroundColor="#cfd0d8" Grid.Row="2" 
+        <Frame BackgroundColor="{x:AppThemeBinding Light={StaticResource Small-Circle-Light}, Dark={StaticResource Small-Circle-Dark}}" Grid.Row="2" 
                VerticalOptions="EndAndExpand"
                HorizontalOptions="StartAndExpand"
                Padding="0" 
@@ -77,7 +77,7 @@
 
         </Frame>
 
-        <Frame BackgroundColor="{x:StaticResource Primary}" 
+        <Frame BackgroundColor="{x:AppThemeBinding Light={StaticResource Big-Circle-Light}, Dark={StaticResource Big-Circle-Dark}}" 
                VerticalOptions="EndAndExpand"
                Grid.Row="2" 
                HorizontalOptions="StartAndExpand"
