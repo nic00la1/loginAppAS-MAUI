@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using loginAppAS.Handlers;
+using Microsoft.Extensions.Logging;
 
 namespace loginAppAS
 {
@@ -7,6 +8,10 @@ namespace loginAppAS
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+
+            // Rejestracja konwertera
+            builder.Services.AddTransient<IValueConverter, ThemeImageConverter>();
+
             builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
@@ -16,7 +21,7 @@ namespace loginAppAS
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

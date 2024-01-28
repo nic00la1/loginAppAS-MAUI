@@ -17,7 +17,8 @@
             <StackLayout>
                 <Label Text="Witaj!" FontSize="Header"/>
                 <Label Text="Zalogowano pomyślnie" FontSize="Medium"/>
-                <Image Source="user.png" Margin="20,40,20,15"/>
+                <Image x:Name="userImage" Margin="20,40,20,15"
+                       Source="{Binding Converter={StaticResource ThemeImageConverter}}"/>
                     <Label x:Name="emailLabel" FontSize="24"
                          Margin="20,20,20,20"/>
                 
