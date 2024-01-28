@@ -86,8 +86,7 @@ namespace loginAppAS
                     .Select(data => new UserData
                     {
                         Email = data[0],
-                        Password = data[1],
-                        Name = "Jan Kowalski"
+                        Password = data[1]
                     })
                     .FirstOrDefault();
 
